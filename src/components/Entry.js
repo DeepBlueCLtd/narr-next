@@ -5,13 +5,9 @@ const Entry = ({ onClick, selected, text, id, created, m_type, privacy}) => (
     <li
         onClick={onClick}
     >
-        <div
-            style={ {
-                backgroundColor: selected ? '#FFFFFF' : 'transparent'
-            }}
-        >
+        <span>
             {text} {id} {created.toLocaleTimeString()} {m_type} {privacy}
-        </div>
+        </span>
     </li>
 );
 
