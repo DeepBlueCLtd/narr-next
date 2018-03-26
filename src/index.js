@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
 
 import React from 'react';
 import './index.css';
@@ -10,7 +9,7 @@ import { createStore } from 'redux'
 import entryApp from './reducers/reducers'
 import App from './components/App'
 
-let store = createStore(entryApp)
+let store = createStore(entryApp);
 
 render(
     <Provider store={store}>
