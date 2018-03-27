@@ -20,7 +20,7 @@ describe("CategoryRender", () => {
         name: "MyCategory",
         priority: "High",
         created: new Date(),
-        m_type: "myType",
+        mType: "myType",
         privacy: "---",
         entries: [
           {

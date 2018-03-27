@@ -10,7 +10,7 @@ const entries = (state = [], action) => {
           text: action.text,
           selected: false,
           created: new Date(),
-          m_type: action.m_type,
+          mType: action.mType,
           privacy: action.privacy
         }
       ];
