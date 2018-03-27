@@ -17,3 +17,7 @@ deploy:
   local_dir: build
   on:
     branch: gh-pages
+notifications:
+  email:
+    recipients:
+      - morphex.e@gmail.com
