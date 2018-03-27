@@ -1,8 +1,7 @@
 import React from 'react';
-import Footer from './Filters';
-import VisibleEntryList from '../containers/VisibleEntryList';
-import AddEntry from '../containers/AddEntry';
 
+import Sidebar from './SideBar';
+import MiddleBar from '../containers/MiddleBarContainer';
 class App extends React.Component {
     constructor(){
         super();
@@ -19,9 +18,16 @@ class App extends React.Component {
         return(
         <div className="main">
             <div className="container">
-                <AddEntry {...this.state} BtnHandler={this.BtnHandler} />
-                <Footer/>
-                <VisibleEntryList/>
+                <div className="row">
+                    <div className="col-md-3 col-lg-3">
+                        <Sidebar/>
+                    </div>
+                    <div className="col-md-9 col-lg-9">
+                        <MiddleBar/>
+                    </div>
+                </div>
+
+
             </div>
         </div>)
     }

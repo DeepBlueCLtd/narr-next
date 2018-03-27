@@ -72,6 +72,84 @@ body {
 .main .list-detail span {
   color: #333333;
 }
+
+/* Filters Cat */
+.pl1 {
+  padding-left: 10px;
+}
+.pr1 {
+  padding-right: 10px;
+}
+.pt1 {
+  padding-top: 10px;
+}
+.pb1 {
+  padding-bottom: 10px;
+}
+.filter_card {
+  background: #EEEEEE;
+  padding: 15px;
+}
+
+.filter-recent {
+  background: #FFFFFF;
+  border: 2px solid #595959;
+  border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+}
+.filter-recent button {
+  border: 2px solid #595959;
+  background: #EFEFEF;
+  border-radius: 10px;
+  width: 48%;
+  margin-right: 4%;
+  padding: 16px;
+  font-size: 16px;
+  line-height: 14px;
+  color: #000;
+  cursor: pointer;
+  outline: 0;
+}
+.filter-recent button:last-child {
+  margin-right: 0;
+}
+
+.filter-deta .filter-deta-scrolling {
+  padding: 10px;
+  border: 2px solid #595959;
+  height: 100%;
+  min-height: 86vh;
+}
+
+.card-box-wrapper {
+  border: 2px solid #595959;
+  border-radius: 20px;
+  background: #FFFFFF;
+  padding: 15px;
+}
+.card-box-wrapper .card-head h4 {
+  text-align: center;
+  margin-bottom: 0;
+}
+.card-box-wrapper .card-item .card-list {
+  border: 2px solid #595959;
+  background: #EFEFEF;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 16px;
+  line-height: 14px;
+  color: #000;
+  cursor: pointer;
+  display: inline-block;
+  margin: 5px;
+}
+.card-box-wrapper .card-item {
+  text-align: center;
+}
+.middle-bar {
+  margin-top: 50px;
+}
 .main .list-detail {
   background: #e7e7e7; /* Old browsers */
   background: -moz-linear-gradient(top, #e7e7e7 0%, #f2f2f2 100%); /* FF3.6-15 */
