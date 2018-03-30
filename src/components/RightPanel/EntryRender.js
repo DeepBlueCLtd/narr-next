@@ -1,6 +1,8 @@
 import { Button } from "reactstrap";
 import { EntryType } from "../Schemas";
+import { UpdateEntry } from "../../actions";
 import { compose, mapProps, withState } from "recompose";
+import { connect } from "react-redux";
 import { set } from "lodash";
 import EntryModal from "./EntryModal";
 import EntryStatus from "../Schemas/EntryStatus";
@@ -24,8 +26,10 @@ const EntryRender = ({
     >
       {entry.name}
     </Button>
+
     <EntryModal
       values={values}
+      inline
       setValue={setValues}
       visible={modalVisible}
       entry={entry}
@@ -74,6 +78,15 @@ EntryRender.propTypes = {
 };
 
 const enhancer2 = compose(
+  connect(
+    state => ({
+      expandedView: state.ui.expanded,
+      useModalEdit: state.ui.useModalEdit
+    }),
+    {
+      updateEntry: UpdateEntry
+    }
+  ),
   withState("values", "setValues", {}),
   withState("modalVisible", "setModalVisible", false),
   enhancer
