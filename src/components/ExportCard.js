@@ -4,6 +4,7 @@ import { colors } from "./Entry";
 import PropTypes from "prop-types";
 import React from "react";
 import jsPDF from "jspdf";
+import moment from "moment/moment";
 
 const styles = StyleSheet.create({
   exportBtn: {
@@ -74,7 +75,7 @@ const Export = ({ entries }) => {
   const lineSpase = 6.4;
   const lineCord = line => (line - 1) * lineSpase + startCord;
   const timeX = 10;
-  const textX = 65;
+  const textX = 35;
 
   const onPdfTextExport = () => {
     const pdf = new jsPDF(); // eslint-disable-line new-cap
@@ -96,8 +97,9 @@ const Export = ({ entries }) => {
           key2 => (text = `${text + key2}, ${fields[key2]}`) // eslint-disable-line no-return-assign
         );
 
+        const timeTxt = moment(created).format("DDHHmm.ss");
         pdf.setFont("Helvetica", "normal");
-        pdf.text(timeX, lineCord(line), created);
+        pdf.text(timeX, lineCord(line), timeTxt);
 
         pdf.setFont("Helvetica", "bold");
         pdf.text(textX, lineCord(line), `${mType} (${privacy})`);
