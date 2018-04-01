@@ -13,6 +13,7 @@ import {
   search,
   unFilter
 } from "../../actions";
+import { Step } from "../Tutorial";
 import { connect } from "react-redux";
 import { entryTypes } from "../../reducers/Selectors";
 import Export from "../../containers/Export";
@@ -84,6 +85,8 @@ class Filters extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <Step text="This filters data" />
+
         <h4>Filters</h4>
         <Hotkeys
           keyName="ctrl+f"

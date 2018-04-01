@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 
+import { Step } from "../Tutorial";
 import Filters from "./Filters";
 import ScrollingView from "./ScrollingView";
 
@@ -28,6 +29,7 @@ const ExpandStyle = styled.div`
 
 const ExpandButton = ({ onClick, expanded }) => (
   <ExpandStyle onClick={onClick}>
+    <Step text="this toggle button is for expanding" />
     <Icon name={expanded ? "chevron-left" : "chevron-right"} />{" "}
   </ExpandStyle>
 );

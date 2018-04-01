@@ -7,32 +7,35 @@ import LeftPanel from "./LeftPanel";
 import PropTypes from "prop-types";
 import React from "react";
 import RightPanel from "../containers/RightPanel";
+import Tutorial from "./Tutorial";
 
 const App = ({ expanded, toggleExpand, config }) => (
-  <Row
-    style={{
-      width: "100%",
-      height: "100%",
-      paddingRight: "0",
-      paddingLeft: "0px",
-      margin: "0px"
-    }}
-  >
-    <Col lg={expanded ? 10 : 3}>
-      <LeftPanel toggleExpand={toggleExpand} expanded={expanded} />
-    </Col>
-    <Col
+  <Tutorial>
+    <Row
       style={{
-        overflowY: "auto",
-        overflowX: "none",
-        maxHeight: "100%",
-        padding: "0px"
+        width: "100%",
+        height: "100%",
+        paddingRight: "0",
+        paddingLeft: "0px",
+        margin: "0px"
       }}
-      lg={expanded ? 2 : 9}
     >
-      <RightPanel collapse={expanded} categories={config.categories} />
-    </Col>
-  </Row>
+      <Col lg={expanded ? 10 : 3}>
+        <LeftPanel toggleExpand={toggleExpand} expanded={expanded} />
+      </Col>
+      <Col
+        style={{
+          overflowY: "auto",
+          overflowX: "none",
+          maxHeight: "100%",
+          padding: "0px"
+        }}
+        lg={expanded ? 2 : 9}
+      >
+        <RightPanel collapse={expanded} categories={config.categories} />
+      </Col>
+    </Row>
+  </Tutorial>
 );
 
 App.propTypes = {
