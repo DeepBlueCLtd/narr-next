@@ -19,6 +19,7 @@ import {
   ToggleSimulation,
   addEntries as addEntryAction
 } from "../../actions";
+import { Step } from "../Tutorial";
 import { compose, lifecycle, withHandlers, withState } from "recompose";
 import { connect } from "react-redux";
 import Generator from "../../Generator";
@@ -50,6 +51,13 @@ const GeneratorConfig = ({
     lg={collapse ? 12 : 6}
     style={{ backgroundColor: "#333", borderColor: "#333" }}
   >
+    <Step
+      order={4}
+      title="Generating bulk data"
+      text="Just for testing, we’ve also introduced some controls to generate data."
+      position="left"
+      overlay
+    />
     <Form style={{ padding: "10px", width: "100%" }}>
       <FormGroup row>
         <Label lg={collapse ? 12 : 2}>Time</Label>
@@ -134,6 +142,13 @@ const GeneratorConfig = ({
             <Label lg={collapse ? 12 : 2}>Bulk</Label>
             <Col lg={collapse ? 6 : 6}>
               <ButtonGroup>
+                <Step
+                  order={9}
+                  title="Sample data"
+                  text="Ok, before we can start exploiting the data we could do with some more.  Click on the Add 500 (or, 5000 if you’re feeling brave)."
+                  position="left"
+                  overlay
+                />
                 <Button outline color="primary" onClick={() => bulkInsert(50)}>
                   50
                 </Button>

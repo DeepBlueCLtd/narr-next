@@ -85,8 +85,6 @@ class Filters extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Step text="This filters data" />
-
         <h4>Filters</h4>
         <Hotkeys
           keyName="ctrl+f"
@@ -95,7 +93,15 @@ class Filters extends React.Component {
             this.search.focus();
           }}
         />
+
         <ButtonGroup>
+          <Step
+            order={12}
+            title="Finding data"
+            text="These filters help find data. Have a go at filtering the list to CO Comments that were made public."
+            position="bottom"
+            overlay
+          />
           <ButtonDropdown
             id="Time"
             isOpen={this.state.isExpanded.Time}
@@ -170,8 +176,8 @@ class Filters extends React.Component {
                 ))}
             </DropdownMenu>
           </ButtonDropdown>
-          <Export />
         </ButtonGroup>
+        <Export />
         <Input
           innerRef={s => {
             this.search = s;

@@ -7,10 +7,29 @@ import LeftPanel from "./LeftPanel";
 import PropTypes from "prop-types";
 import React from "react";
 import RightPanel from "../containers/RightPanel";
-import Tutorial from "./Tutorial";
+import Tutorial, { Step } from "./Tutorial";
 
 const App = ({ expanded, toggleExpand, config }) => (
   <Tutorial>
+    <Step
+      order={1}
+      title="Welcome"
+      text="
+Welcome to the Next-Narrative Demonstrator. This is a browser-based technical demonstrator aimed to validate the following:
+Browser performance with high volumes of narrative data
+Offline-first application (without backend server)
+Browser-based export to PDF
+Adoption of a browser-based application brings the following benefits: 
+Adherence to web standards make the application future-proof
+Versatile, capable UI tools, including re-configurable event library
+Secure: nothing is “installed” on client PC, and the app has no direct access to local storage
+Should there be a wish to connect to a central server, http is regularly one of the first interfaces to be opened up
+"
+      position="center"
+      show
+      overlay
+      forcePrevent
+    />
     <Row
       style={{
         width: "100%",
@@ -32,6 +51,13 @@ const App = ({ expanded, toggleExpand, config }) => (
         }}
         lg={expanded ? 2 : 9}
       >
+        <Step
+          order={3}
+          title="Generating Entries"
+          text="Here is a set of categorised entry types.  The layout comes from an editable data-file, so it’s quite possible to distribute a set of layouts, to suit different platforms, tasking, or narrative-keeper roles."
+          position="left"
+          overlay
+        />
         <RightPanel collapse={expanded} categories={config.categories} />
       </Col>
     </Row>

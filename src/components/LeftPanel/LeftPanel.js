@@ -29,7 +29,13 @@ const ExpandStyle = styled.div`
 
 const ExpandButton = ({ onClick, expanded }) => (
   <ExpandStyle onClick={onClick}>
-    <Step text="this toggle button is for expanding" />
+    <Step
+      order={10}
+      title="Reviewing data"
+      text="The earlier steps showed how the timestamp for a series of events can be captured quickly, then filled in during a more quiet period. Click on this button to expand the narrative, so we can start tidying it.  The event buttons are still on the right-hand side, in case the narrative-keeper wants to insert an entry while still focussing on the content."
+      position="bottom"
+      overlay
+    />{" "}
     <Icon name={expanded ? "chevron-left" : "chevron-right"} />{" "}
   </ExpandStyle>
 );
@@ -45,6 +51,19 @@ ExpandButton.defaultProps = {
 
 const LeftPanel = ({ toggleExpand, expanded }) => (
   <Card style={{ height: "100%" }}>
+    <Step
+      order={2}
+      title="Narrative"
+      text="Here is where the narrative is going to be collated, similar to the Document in the traditional narrative. At the top are a set of controls used to manipulate the whole narrative."
+      position="right"
+    />
+    <Step
+      order={11}
+      title="Editing Data"
+      text="You can now finish off populating new entries. To edit existing data, just double-click on an entry.  A version history is captured for each entry, to support post-event analysis."
+      position="left"
+      overlay
+    />{" "}
     <CardHeader
       className="bg-primary text-center text-white"
       style={{
@@ -53,6 +72,7 @@ const LeftPanel = ({ toggleExpand, expanded }) => (
       }}
     >
       <ExpandButton expanded={expanded} onClick={toggleExpand} />
+
       <Filters />
     </CardHeader>
     <div style={{ position: "relative", width: "100%", height: "100%" }}>
