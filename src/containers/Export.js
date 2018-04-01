@@ -1,8 +1,9 @@
 import { connect } from "react-redux";
 import { getVisibleEntries } from "./VisibleEntryList";
-import ExportCard from "../components/ExportCard";
+import ExportPdf from "../components/ExportPdf";
+import jsPDF from "jspdf";
 
-const lineLength = 80;
+const lineWidth = 195;
 const maxLines = 36;
 
 const groupEntries = state => {
@@ -10,16 +11,38 @@ const groupEntries = state => {
     state.entries,
     state.visibilityFilter,
     state.privacyFilter,
-    state.timeFilter
+    state.timeFilter,
+    state.typeFilter,
+    state.searchKeyword
   );
 
+  const pdf = new jsPDF("p", "mm", "a4"); // eslint-disable-line new-cap
+
   entries = entries.map(entry => {
-    const output = entry;
-    output.linePoint = 2;
-    if (output.text) {
-      output.linePoint += Math.ceil(output.text.length / lineLength);
+    const theE = entry;
+
+    theE.linePoint = 1;
+
+    const textArray = [];
+
+    if (theE.fields) {
+      /* eslint-disable-next-line */
+      Object.keys(theE.fields).forEach((field, key) => {
+        textArray.push(`${field}: ${theE.fields[field]}`);
+      });
     }
-    return output;
+
+    theE.fieldsFormatted = null;
+
+    if (textArray.length) {
+      theE.fieldsFormatted = pdf.splitTextToSize(
+        textArray.join(", "),
+        lineWidth
+      );
+      theE.linePoint += theE.fieldsFormatted.length;
+    }
+
+    return theE;
   });
 
   const pages = [];
@@ -43,6 +66,6 @@ const mapStateToProps = state => ({
   entries: groupEntries(state)
 });
 
-const Export = connect(mapStateToProps)(ExportCard);
+const Export = connect(mapStateToProps)(ExportPdf);
 
 export default Export;
