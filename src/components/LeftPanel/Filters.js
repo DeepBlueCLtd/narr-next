@@ -167,7 +167,6 @@ class Filters extends React.Component {
                 ))}
             </DropdownMenu>
           </ButtonDropdown>
-          <Export />
         </ButtonGroup>
         <Input
           innerRef={s => {
@@ -179,6 +178,7 @@ class Filters extends React.Component {
             this.searchBarHandler(e);
           }}
         />
+        <Export />
       </React.Fragment>
     );
   }
