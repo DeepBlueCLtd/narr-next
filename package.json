@@ -43,8 +43,7 @@
     "reselect": "3.0.1",
     "simple-react-validator": "0.0.6",
     "styled-components": "3.2.3",
-    "lorem-ipsum": "1.0.4",
-    "styled-components": "3.2.3"
+    "lorem-ipsum": "1.0.4"
   },
   "devDependencies": {
     "enzyme": "3.3.0",
@@ -71,7 +70,7 @@
   },
   "scripts": {
     "coverage": "test -- --coverage",
-
+    "precommit": "lint-staged",
     "format": "prettier --write src/**/*.{js,jsx,css}",
     "linter": "eslint --fix src/**/*.{js,jsx}",
     "lint": " npm run format && npm run linter",
