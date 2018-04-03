@@ -16,15 +16,18 @@ const App = ({ expanded, toggleExpand, config }) => (
       title="Welcome"
       text="
 Welcome to the Next-Narrative Demonstrator. This is a browser-based technical demonstrator aimed to validate the following:
-Browser performance with high volumes of narrative data
-Offline-first application (without backend server)
-Browser-based export to PDF
+<ul>
+<li>Browser performance with high volumes of narrative data</li>
+<li>Offline-first application (without backend server)</li>
+<li>Browser-based export to PDF</li>
+</ul>
 Adoption of a browser-based application brings the following benefits: 
-Adherence to web standards make the application future-proof
-Versatile, capable UI tools, including re-configurable event library
-Secure: nothing is “installed” on client PC, and the app has no direct access to local storage
-Should there be a wish to connect to a central server, http is regularly one of the first interfaces to be opened up
-"
+<ul>
+<li>Adherence to web standards make the application future-proof</li>
+<li>Versatile, capable UI tools, including re-configurable event library</li>
+<li>Secure: nothing is “installed” on client PC, and the app has no direct access to local storage</li>
+<li>Should there be a wish to connect to a central server, http is regularly one of the first interfaces to be opened up</li>
+</ul>"
       position="center"
       show
       overlay
