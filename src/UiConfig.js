@@ -15,6 +15,13 @@ export default {
           id: "co-comment",
           name: "CO Comment",
           priority: "High",
+          step: {
+            title: "Generate Entry",
+            order: 5,
+            text:
+              "Ok, let’s create a narrative entry, direct from the CO.  So, click on the CO Comment button.",
+            position: "left"
+          },
           fields: [
             {
               name: "Comment",
@@ -195,6 +202,13 @@ export default {
       priority: "High",
       widgets: [
         {
+          step: {
+            title: "Interactive controls",
+            order: 8,
+            text:
+              "Instead of plain buttons, some concepts can be represented by dedicated widgets.  These indicators are used both to indicate the current state of each mast and to record mast activity. Click on some mast icons, and observe new entries being inserted",
+            position: "right"
+          },
           id: "masts",
           masts: ["Search", "Radar", "ESM"]
         }

@@ -1,4 +1,5 @@
 import { Badge, Button } from "reactstrap";
+import { Step } from "./Tutorial";
 import { StyleSheet, css } from "aphrodite";
 import { colors } from "./Entry";
 import PropTypes from "prop-types";
@@ -166,8 +167,17 @@ const Export = ({ entries }) => {
       onClick={onPdfTextExport}
       disabled={!entries.length}
     >
-      <Pdf />
-      PDF
+      <div style={{ position: "relative", width: "100%", height: "100%" }}>
+        <Pdf />
+        PDF
+        <Step
+          order={13}
+          title="Exporting data"
+          text="One of the main roles of the narrative is to form part of a deployment report.  Click on the PDF button to see the exported data."
+          position="bottom"
+          overlay
+        />
+      </div>
     </Button>
   );
 };
