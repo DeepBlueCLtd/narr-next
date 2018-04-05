@@ -99,7 +99,7 @@ class Filters extends React.Component {
             order={12}
             title="Finding data"
             text="These filters help find data. Have a go at filtering the list to CO Comments that were made public."
-            position="bottom"
+            position="right"
             overlay
           />
           <ButtonDropdown

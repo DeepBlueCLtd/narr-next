@@ -35,8 +35,15 @@ const ExpandButton = ({ onClick, expanded }) => (
       text="The earlier steps showed how the timestamp for a series of events can be captured quickly, then filled in during a more quiet period. Click on this button to expand the narrative, so we can start tidying it.  The event buttons are still on the right-hand side, in case the narrative-keeper wants to insert an entry while still focussing on the content."
       position="bottom"
       overlay
-    />{" "}
-    <Icon name={expanded ? "chevron-left" : "chevron-right"} />{" "}
+    />
+    <Step
+      order={6}
+      title="Populate Data"
+      text="Ok, the app has generated a time-stamped entry for the CO Comment.  Now type the details into the comment, and press Accept."
+      position="bottom"
+      overlay
+    />
+    <Icon name={expanded ? "chevron-left" : "chevron-right"} />
   </ExpandStyle>
 );
 

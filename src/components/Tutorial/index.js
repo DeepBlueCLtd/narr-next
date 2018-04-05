@@ -88,8 +88,11 @@ const Wrapped = compose(
         id: this.props.order.toString(),
         title: this.props.title || "",
         text: this.props.text || "NO text  was passed",
-        attachTo: "." + id + " " + (this.props.position || "middle"),
-        classes: "shepherd-theme-dark example-step-extra-class",
+        attachTo: {
+          element: `.${id}`,
+          on: this.props.position
+        },
+        classes: "shepherd-theme-dark " + this.props.className,
         beforeShowPromise: () => {
           this.props.setVisible(true);
           this.props.context.setOverlay("." + id);
