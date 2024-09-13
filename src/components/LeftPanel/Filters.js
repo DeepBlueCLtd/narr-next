@@ -13,6 +13,7 @@ import {
   search,
   unFilter
 } from "../../actions";
+import { Step } from "../Tutorial";
 import { connect } from "react-redux";
 import { entryTypes } from "../../reducers/Selectors";
 import Export from "../../containers/Export";
@@ -92,7 +93,15 @@ class Filters extends React.Component {
             this.search.focus();
           }}
         />
+
         <ButtonGroup>
+          <Step
+            order={12}
+            title="Finding data"
+            text="These filters help find data. Have a go at filtering the list to CO Comments that were made public."
+            position="right"
+            overlay
+          />
           <ButtonDropdown
             id="Time"
             isOpen={this.state.isExpanded.Time}
@@ -168,6 +177,7 @@ class Filters extends React.Component {
             </DropdownMenu>
           </ButtonDropdown>
         </ButtonGroup>
+        <Export />
         <Input
           innerRef={s => {
             this.search = s;

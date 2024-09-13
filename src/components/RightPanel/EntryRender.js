@@ -1,5 +1,6 @@
 import { Button } from "reactstrap";
 import { EntryType } from "../Schemas";
+import { Step } from "../Tutorial";
 import { compose, mapProps, withState } from "recompose";
 import { connect } from "react-redux";
 import { set } from "lodash";
@@ -24,6 +25,13 @@ const EntryRender = ({
       style={{ width: "100%", height: "100%" }}
     >
       {entry.name}
+      {entry.step != null && (
+        <Step
+          order={entry.step.order}
+          title={entry.step.title}
+          text={entry.step.text}
+        />
+      )}
     </Button>
     <EntryModal
       values={values}

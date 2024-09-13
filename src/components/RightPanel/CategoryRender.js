@@ -1,5 +1,6 @@
 import { Card, CardColumns } from "reactstrap";
 import { CategoryType } from "../Schemas";
+import { Step } from "../Tutorial";
 import EntryRender from "./EntryRender";
 import Panel from "./Panel";
 import PropTypes from "prop-types";
@@ -18,6 +19,14 @@ const CategoryRender = ({ category, collapse, addEntry }) => (
       {category.widgets &&
         category.widgets.filter(x => !x.hidden).map(entry => (
           <Card key={entry.id}>
+            {entry.step && (
+              <Step
+                order={entry.step.order}
+                title={entry.step.title}
+                text={entry.step.text}
+                position={entry.step.text}
+              />
+            )}
             <WidgetRender config={entry} />
           </Card>
         ))}

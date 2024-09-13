@@ -1,6 +1,7 @@
 {
   "extends": ["airbnb", "prettier"],
   "plugins": ["sort-imports-es6-autofix"],
+  "parser": "babel-eslint",
   "rules": {
     "react/jsx-filename-extension": 0,
     "linebreak-style": 0,
